@@ -1,0 +1,34 @@
+# LiLi Compiler Configurations
+
+export COMPILER_NAME="LiLiCompiler"
+export VERSION="0.1.0"
+
+unset CFLAGS
+unset CXXFLAGS
+
+export BUILD_ROOT=$(pwd)
+
+export SCRIPTS=${BUILD_ROOT}/scripts
+export SOURCES=${BUILD_ROOT}/sources
+export SETTINGS=${BUILD_ROOT}/settings
+export BUILDS=${BUILD_ROOT}/builds
+
+export COMPILER_SCRIPTS=${SCRIPTS}/compiler
+export TOOLCHAIN_DEPS=${PACKAGES}/toolchain
+
+export CLFS=${BUILD_ROOT}/target
+export CLFS_SOURCES=${CLFS}/sources
+export CLFS_TOOLS=${CLFS}/cross-tools
+export CLFS_ENV_PATH=${CLFS_TOOLS}/bin
+
+export KERNEL_VERSION="3.12"
+
+export CLFS_FLOAT="hard"
+export CLFS_FPU="vfp"
+export CLFS_HOST="$(echo ${MACHTYPE} | sed "s/-[^-]*/-cross/")"
+export CLFS_TARGET="arm-linux-musleabihf"
+export CLFS_ARCH="arm"
+export CLFS_ARM_ARCH="armv6zk"
+export CLFS_ENDIAN="little"
+export CLFS_ABI="aapcs-linux"
+
