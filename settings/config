@@ -9,6 +9,7 @@ unset CXXFLAGS
 export BUILD_ROOT=$(pwd)
 
 export SCRIPTS=${BUILD_ROOT}/scripts
+export PACKAGES=${BUILD_ROOT}/packages
 export SOURCES=${BUILD_ROOT}/sources
 export SETTINGS=${BUILD_ROOT}/settings
 export BUILDS=${BUILD_ROOT}/builds
