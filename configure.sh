@@ -33,7 +33,14 @@ REQ_PROGS=("bash"
            "makeinfo"
            "bc"
            "wget"
-           "git")
+           "git"
+           "parted"
+           "losetup"
+           "mkfs.vfat"
+           "mke2fs"
+           "e2fsck"
+           "uuidgen"
+           "tune2fs")
 
 echo ""
 echo "Verifying host requirements..."
@@ -84,7 +91,40 @@ for prog in "${REQ_PROGS[@]}"; do
             else
                 display_yes
             fi
-            ;;        
+            ;;
+        tune2fs | mke2fs | mkfs.vfat)
+            DISCARD="$(${prog} --version &> /dev/null)"
+            RESPONSE="${?}"
+            echo -n "checking for ${prog}... "
+            if [ "${RESPONSE}" != "1" ]; then
+                display_no
+                exit -1
+            else
+                display_yes
+            fi
+            ;;
+        e2fsck)
+            DISCARD="$(${prog} --version &> /dev/null)"
+            RESPONSE="${?}"
+            echo -n "checking for ${prog}... "
+            if [ "${RESPONSE}" != "16" ]; then
+                display_no
+                exit -1
+            else
+                display_yes
+            fi
+            ;;
+        uuidgen | sudo | losetup)
+            DISCARD="$(${prog} --version &> /dev/null)"
+            RESPONSE="${?}"
+            echo -n "checking for ${prog}... "
+            if [ "${RESPONSE}" != "0" ] && [ "${RESPONSE}" != "1" ]; then
+                display_no
+                exit -1
+            else
+                display_yes
+            fi
+            ;;
         *)
             DISCARD="$(${prog} --version)"
             RESPONSE="${?}"
