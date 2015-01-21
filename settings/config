@@ -22,7 +22,7 @@ export CLFS_SOURCES=${CLFS}/sources
 export CLFS_TOOLS=${CLFS}/cross-tools
 export CLFS_ENV_PATH=${CLFS_TOOLS}/bin
 
-export KERNEL_VERSION="3.12"
+export KERNEL_VERSION="3.18"
 
 export CLFS_FLOAT="hard"
 export CLFS_FPU="vfp"
