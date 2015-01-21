@@ -63,7 +63,7 @@ fi
 cd "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}"
 . "${sub_pkg_dir}/package.mk"
 tar -xjvf "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}${PKG_SUB_VERSION}.tar.bz2"
-mv -v "${PKG_NAME}-${PKG_VERSION}${PKG_SUB_VERSION}" "${PKG_NAME}"
+mv -v "${PKG_NAME}-${PKG_VERSION}" "${PKG_NAME}"
 
 # mpc
 sub_pkg_dir="$(locate_package 'mpc')"
