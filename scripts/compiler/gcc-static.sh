@@ -55,15 +55,15 @@ mv -v "${PKG_NAME}-${PKG_VERSION}" "${PKG_NAME}"
 sub_pkg_dir="$(locate_package 'gmp')"
 . "${sub_pkg_dir}/package.mk"
 cd "${CLFS_SOURCES}/"
-if [ ! -e "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}.tar.bz2" ]; then
+if [ ! -e "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}${PKG_SUB_VERSION}.tar.bz2" ]; then
     wget --read-timeout=20 "${PKG_URL}"
 fi
 # reset import
 . "${pkg_dir}/package.mk"
 cd "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}"
 . "${sub_pkg_dir}/package.mk"
-tar -xjvf "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}.tar.bz2"
-mv -v "${PKG_NAME}-${PKG_VERSION}" "${PKG_NAME}"
+tar -xjvf "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}${PKG_SUB_VERSION}.tar.bz2"
+mv -v "${PKG_NAME}-${PKG_VERSION}${PKG_SUB_VERSION}" "${PKG_NAME}"
 
 # mpc
 sub_pkg_dir="$(locate_package 'mpc')"
