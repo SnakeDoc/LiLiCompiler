@@ -15,9 +15,10 @@
 ################################################################################
 
 PKG_NAME="gmp"
-PKG_VERSION="6.0.0a"
+PKG_VERSION="6.0.0"
+PKG_SUB_VERSION="a"
 PKG_URL_TYPE="http"
-PKG_URL="http://ftp.gnu.org/gnu/gmp/${PKG_NAME}-${PKG_VERSION}.tar.bz2"
+PKG_URL="http://ftp.gnu.org/gnu/gmp/${PKG_NAME}-${PKG_VERSION}${PKG_SUB_VERSION}.tar.bz2"
 PKG_DEPENDS=""
 PKG_SECTION="devel"
 
