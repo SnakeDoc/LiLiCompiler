@@ -15,7 +15,7 @@
 ################################################################################
 
 PKG_NAME="gcc"
-PKG_VERSION="4.8.2"
+PKG_VERSION="4.8.3"
 PKG_URL_TYPE="http"
 PKG_URL="ftp://gcc.gnu.org/pub/gcc/releases/${PKG_NAME}-${PKG_VERSION}/${PKG_NAME}-${PKG_VERSION}.tar.bz2"
 PKG_DEPENDS="linux,binutils,gmp,mpfr,mpc,musl-libc"
