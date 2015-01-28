@@ -36,6 +36,9 @@ build_package() {
                  "gcc.sh" \
                  "musl-libc.sh" \
                  "zlib.sh" \
+                 "m4.sh" \
+                 "flex.sh" \
+                 "bison.sh" \
                  )
 
             for SCRIPT_NAME in "${scripts[@]}"; do
