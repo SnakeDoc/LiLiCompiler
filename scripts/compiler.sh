@@ -39,6 +39,7 @@ build_package() {
                  "m4.sh" \
                  "flex.sh" \
                  "bison.sh" \
+                 "gmp.sh" \
                  )
 
             for SCRIPT_NAME in "${scripts[@]}"; do
