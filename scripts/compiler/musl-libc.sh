@@ -36,7 +36,7 @@ CC="${CLFS_ENV_PATH}/${CLFS_TARGET}-gcc" make
 DESTDIR="${CLFS_TOOLS}/${CLFS_TARGET}" make install
 
 # fixup sym link to correct libc we want to use
-ln -svf libc.so "${CLFS_TOOLS}/${CLFS_TARGET}/lib/ld-musl-${ARCH}hf.so.1"
+ln -svf libc.so "${CLFS_TOOLS}/${CLFS_TARGET}/lib/ld-musl-${CLFS_ARCH}hf.so.1"
 
 # cleanup
 cd "${CLFS_SOURCES}/"
