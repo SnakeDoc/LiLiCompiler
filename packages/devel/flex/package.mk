@@ -17,7 +17,7 @@
 PKG_NAME="flex"
 PKG_VERSION="2.5.39"
 PKG_URL_TYPE="http"
-PKG_URL="http://prdownloads.sourceforge.net/${PKG_NAME}/${PKG_NAME}-${PKG_VERSION}.tar.bz2"
+PKG_URL="http://downloads.sourceforge.net/project/${PKG_NAME}/${PKG_NAME}-${PKG_VERSION}.tar.bz2"
 PKG_DEPENDS=""
 PKG_SECTION="devel"
 
