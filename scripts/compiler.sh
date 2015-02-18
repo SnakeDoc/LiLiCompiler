@@ -29,6 +29,7 @@ build_package() {
     case "${1}" in
         gcc)
             declare -a scripts=(\
+                 "file.sh" \
                  "linux_headers.sh" \
                  "binutils.sh" \
                  "gcc-static.sh" \
