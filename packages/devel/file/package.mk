@@ -22,4 +22,4 @@ PKG_DEPENDS=""
 PKG_SECTION="devel"
 
 PKG_CONFIGURE_OPTS=(--prefix="${CLFS_TOOLS}"
-                    --disable-static
+                    --disable-static)
