@@ -21,4 +21,8 @@ PKG_URL="http://www.multiprecision.org/mpc/download/${PKG_NAME}-${PKG_VERSION}.t
 PKG_DEPENDS=""
 PKG_SECTION="devel"
 
-PKG_CONFIGURE_OPTS=""
+PKG_CONFIGURE_OPTS=(--prefix="${CLFS_TOOLS}"
+                    --enable-shared
+                    --disable-static
+                    --with-gmp="${CLFS_TOOLS}"
+                    --with-mpfr="${CLFS_TOOLS}")
