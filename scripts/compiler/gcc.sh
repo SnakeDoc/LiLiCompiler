@@ -35,8 +35,10 @@ cd "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/"
 
 patch -Np1 -i "${SOURCES}/${PKG_NAME}-${PKG_VERSION}-musl.diff"
 
+echo -en '\n#undef STANDARD_STARTFILE_PREFIX_1\n#define STANDARD_STARTFILE_PREFIX_1 "${CLFS_TOOLS}/lib/"\n' >> gcc/config/linux.h
+echo -en '\n#undef STANDARD_STARTFILE_PREFIX_2\n#define STANDARD_STARTFILE_PREFIX_2 ""\n' >> gcc/config/linux.h
+
 # setup build
-. "${pkg_dir}/package.mk"
 mkdir -v "${CLFS_SOURCES}/${PKG_NAME}-build"
 cd "${CLFS_SOURCES}/${PKG_NAME}-build/"
 
