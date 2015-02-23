@@ -36,7 +36,7 @@ cd "${CLFS_SOURCES}/"
 mkdir -v "${CLFS_SOURCES}/${PKG_NAME}-build"
 cd "${CLFS_SOURCES}/${PKG_NAME}-build"
 
-"${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/configure" "${PKG_CONFIGURE_OPTS[@]}"
+AR=ar AS=as ./configure "${PKG_CONFIGURE_OPTS[@]}"
 
 make configure-host
 
