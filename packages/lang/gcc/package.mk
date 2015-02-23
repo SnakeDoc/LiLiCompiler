@@ -39,8 +39,12 @@ STATIC_CONFIGURE_OPTS=(--prefix="${CLFS_TOOLS}"
                        --disable-threads
                        --enable-languages=c
                        --disable-multilib
-                       --with-mpfr-include="${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/mpfr/src"
-                       --with-mpfr-lib="${CLFS_SOURCES}/${PKG_NAME}-build/mpfr/src/.libs"
+                       --enable-checking=release
+                       --with-mpfr="${CLFS_TOOLS}"
+                       --with-gmp="${CLFS_TOOLS}"
+                       --with-isl="${CLFS_TOOLS}"
+                       --with-cloog="${CLFS_TOOLS}"
+                       --with-mpc="${CLFS_TOOLS}"
                        --with-arch="${CLFS_ARM_ARCH}"
                        --with-float="${CLFS_FLOAT}"
                        --with-fpu="${CLFS_FPU}"
@@ -58,11 +62,15 @@ PKG_CONFIGURE_OPTS=(--prefix="${CLFS_TOOLS}"
                     --enable-long-long
                     --disable-libmudflap
                     --disable-multilib
-                    --with-mpfr-include="${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/mpfr/src"
-                    --with-mpfr-lib="${CLFS_SOURCES}/${PKG_NAME}-build/mpfr/src/.libs"
+                    --with-mpfr="${CLFS_TOOLS}"
+                    --with-gmp="${CLFS_TOOLS}"
+                    --with-isl="${CLFS_TOOLS}"
+                    --with-cloog="${CLFS_TOOLS}"
+                    --with-mpc="${CLFS_TOOLS}"
                     --with-arch="${CLFS_ARM_ARCH}"
                     --with-float="${CLFS_FLOAT}"
                     --with-fpu="${CLFS_FPU}"
                     --with-abi="${CLFS_ABI}"
-                    --with-mode="${CLFS_ARCH}")
+                    --with-mode="${CLFS_ARCH}"
+                    --enable-checking=release)
 

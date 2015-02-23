@@ -35,50 +35,6 @@ cd "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/"
 
 patch -Np1 -i "${SOURCES}/${PKG_NAME}-${PKG_VERSION}-musl.diff"
 
-# make sure dependencies are available
-
-# mpfr
-sub_pkg_dir="$(locate_package 'mpfr')"
-. "${sub_pkg_dir}/package.mk"
-cd "${CLFS_SOURCES}/"
-if [ ! -e "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}.tar.bz2" ]; then
-    wget --read-timeout=20 "${PKG_URL}"
-fi
-# reset import
-. "${pkg_dir}/package.mk"
-cd "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}"
-. "${sub_pkg_dir}/package.mk"
-tar -xjvf "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}.tar.bz2"
-mv -v "${PKG_NAME}-${PKG_VERSION}" "${PKG_NAME}"
-
-# gmp
-sub_pkg_dir="$(locate_package 'gmp')"
-. "${sub_pkg_dir}/package.mk"
-cd "${CLFS_SOURCES}/"
-if [ ! -e "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}${PKG_SUB_VERSION}.tar.bz2" ]; then
-    wget --read-timeout=20 "${PKG_URL}"
-fi
-# reset import
-. "${pkg_dir}/package.mk"
-cd "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}"
-. "${sub_pkg_dir}/package.mk"
-tar -xjvf "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}${PKG_SUB_VERSION}.tar.bz2"
-mv -v "${PKG_NAME}-${PKG_VERSION}" "${PKG_NAME}"
-
-# mpc
-sub_pkg_dir="$(locate_package 'mpc')"
-. "${sub_pkg_dir}/package.mk"
-cd "${CLFS_SOURCES}/"
-if [ ! -e "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}.tar.gz" ]; then
-    wget --read-timeout=20 "${PKG_URL}"
-fi
-# reset import
-. "${pkg_dir}/package.mk"
-cd "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}"
-. "${sub_pkg_dir}/package.mk"
-tar -zxvf "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}.tar.gz"
-mv -v "${PKG_NAME}-${PKG_VERSION}" "${PKG_NAME}"
-
 # setup build
 . "${pkg_dir}/package.mk"
 mkdir -v "${CLFS_SOURCES}/${PKG_NAME}-build"
