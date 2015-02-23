@@ -21,4 +21,7 @@ PKG_URL="http://www.mpfr.org/mpfr-current/${PKG_NAME}-${PKG_VERSION}.tar.bz2"
 PKG_DEPENDS=""
 PKG_SECTION="devel"
 
-PKG_CONFIGURE_OPTS=""
+PKG_CONFIGURE_OPTS=(--prefix="${CLFS_TOOLS}"
+                    --enable-shared
+                    --disable-static
+                    --with-gmp="${CLFS_TOOLS}")
