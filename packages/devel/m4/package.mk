@@ -21,7 +21,4 @@ PKG_URL="http://ftp.gnu.org/gnu/${PKG_NAME}/${PKG_NAME}-${PKG_VERSION}.tar.gz"
 PKG_DEPENDS=""
 PKG_SECTION="devel"
 
-PKG_CONFIGURE_OPTS=(--prefix="${CLFS_TOOLS}"
-                    --build="${CLFS_HOST}"
-                    --target="${CLFS_TARGET}"
-                    --host="${CLFS_HOST}")
+PKG_CONFIGURE_OPTS=(--prefix="${CLFS_TOOLS}")
