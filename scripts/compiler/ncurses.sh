@@ -29,7 +29,7 @@ tar -zxvf "${PKG_NAME}-${PKG_VERSION}.tar.gz"
 
 cd "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/"
 
-patch -Np1 -i "${SOURCES}/${PKG_NAME}-${PKG_VERSION}-bash_fix-1.patch
+patch -Np1 -i "${SOURCES}/${PKG_NAME}-${PKG_VERSION}-bash_fix-1.patch"
 
 "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/configure" "${PKG_CONFIGURE_OPTS[@]}"
 
