@@ -71,8 +71,8 @@ mkdir -pv "${CLFS}"
 # Make source dir
 mkdir -pv "${CLFS_SOURCES}"
 # create sysroot directory
-mkdir -pv "${CLFS_TOOLS}/${CLFS_TARGET}"
-ln -sfv . "${CLFS_TOOLS}/${CLFS_TARGET}/usr"
+mkdir -pv "${CLFS_TOOLS}"
+ln -sfv . "${CLFS_TOOLS}/usr"
 
 # toolchain
 . "${TOOLCHAIN_DEPS}/package.mk"
