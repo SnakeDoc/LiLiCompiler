@@ -22,8 +22,11 @@ PKG_DEPENDS=""
 PKG_SECTION="devel"
 
 PKG_CONFIGURE_OPTS=(--prefix="${CLFS_TOOLS}"
+                    --host="${CLFS_HOST}"
                     --target="${CLFS_TARGET}"
-                    --with-sysroot="${CLFS_TOOLS}/${CLFS_TARGET}"
+                    --with-sysroot="${CLFS_TOOLS}"
                     --disable-nls
+                    --enable-shared
+                    --disable-static
                     --disable-multilib
                     --disable-werror)
