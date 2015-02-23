@@ -15,7 +15,7 @@
 ################################################################################
 
 PKG_NAME="isl"
-PKG_VERSION="0.14"
+PKG_VERSION="0.12.2"
 PKG_URL_TYPE="http"
 PKG_URL="http://${PKG_NAME}.gforge.inria.fr/${PKG_NAME}-${PKG_VERSION}.tar.bz2"
 PKG_DEPENDS=""

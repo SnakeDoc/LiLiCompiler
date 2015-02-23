@@ -36,12 +36,16 @@ cd "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/"
 patch -Np1 -i "${SOURCES}/${PKG_NAME}-${PKG_VERSION}-musl.diff"
 patch -Np1 -i "${SOURCES}/${PKG_NAME}-${PKG_VERSON}-branch_update-1.patch"
 
+echo -en '\n#undef STANDARD_STARTFILE_PREFIX_1\n#define STANDARD_STARTFILE_PREFIX_1 "${CLFS_TOOLS}/lib/"\n' >> gcc/config/linux.h
+echo -en '\n#undef STANDARD_STARTFILE_PREFIX_2\n#define STANDARD_STARTFILE_PREFIX_2 ""\n' >> gcc/config/linux.h
+
+touch "${CLFS_TOOLS}/include/limits.h"
+
 # setup build
-. "${pkg_dir}/package.mk"
 mkdir -v "${CLFS_SOURCES}/${PKG_NAME}-build"
 cd "${CLFS_SOURCES}/${PKG_NAME}-build/"
 
-"${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/configure" "${STATIC_CONFIGURE_OPTS[@]}"
+AR=ar LDFLAGS="-Wl,-rpath,${CLFS_TOOLS}/lib" "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/configure" "${STATIC_CONFIGURE_OPTS[@]}"
   
 make all-gcc all-target-libgcc
 
