@@ -25,7 +25,7 @@ STATIC_CONFIGURE_OPTS=(--prefix="${CLFS_TOOLS}"
                        --build="${CLFS_HOST}"
                        --host="${CLFS_HOST}"
                        --target="${CLFS_TARGET}"
-                       --with-sysroot="${CLFS_TOOLS}/${CLFS_TARGET}"
+                       --with-sysroot="${CLFS_TOOLS}"
                        --disable-nls
                        --disable-shared
                        --without-headers
@@ -55,7 +55,7 @@ PKG_CONFIGURE_OPTS=(--prefix="${CLFS_TOOLS}"
                     --build="${CLFS_HOST}"
                     --target="${CLFS_TARGET}"
                     --host="${CLFS_HOST}"
-                    --with-sysroot="${CLFS_TOOLS}/${CLFS_TARGET}"
+                    --with-sysroot="${CLFS_TOOLS}"
                     --disable-nls
                     --enable-languages=c,c++
                     --enable-c99
