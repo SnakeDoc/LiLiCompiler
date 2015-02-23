@@ -1,4 +1,4 @@
-!/bin/bash
+!#/bin/bash
 
 # CLooG
 
@@ -12,7 +12,7 @@ sub_pkg_dir="$(locate_package 'cloog')"
 
 cd "${CLFS_SOURCES}/"
 
-if [ ! -e "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}${PKG_SUB_VERSION}.tar.gz" ]; then
+if [ ! -e "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}.tar.gz" ]; then
     wget --read-timeout=20 "${PKG_URL}"
 fi
 
@@ -25,7 +25,7 @@ fi
 
 cd "${CLFS_SOURCES}/"
 
-tar -zxvf "${PKG_NAME}-${PKG_VERSION}${PKG_SUB_VERSION}.tar.gz"
+tar -zxvf "${PKG_NAME}-${PKG_VERSION}.tar.gz"
 
 cd "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/"
 
