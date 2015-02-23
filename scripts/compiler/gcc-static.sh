@@ -34,6 +34,7 @@ tar -xvjf "${PKG_NAME}-${PKG_VERSION}.tar.bz2"
 cd "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/"
 
 patch -Np1 -i "${SOURCES}/${PKG_NAME}-${PKG_VERSION}-musl.diff"
+patch -Np1 -i "${SOURCES}/${PKG_NAME}-${PKG_VERSON}-branch_update-1.patch"
 
 # setup build
 . "${pkg_dir}/package.mk"
