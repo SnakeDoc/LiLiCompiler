@@ -34,6 +34,7 @@ build_package() {
                  "m4.sh" \
                  "ncurses.sh" \
                  "pkg-config-lite.sh" \
+                 "gmp.sh native" \
                  "gmp.sh" \
                  "mpfr.sh" \
                  "mpc.sh" \

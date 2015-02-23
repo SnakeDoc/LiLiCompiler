@@ -29,7 +29,11 @@ tar -xjvf "${PKG_NAME}-${PKG_VERSION}${PKG_SUB_VERSION}.tar.bz2"
 
 cd "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/"
 
-M4="${CLFS_ENV_PATH}/m4" CPPFLAGS=-fexceptions ./configure "${PKG_CONFIGURE_OPTS[@]}"
+if [ "${1}" == "native" ]; then
+    M4="${CLFS_ENV_PATH}/m4" CPPFLAGS=-fexceptions ./configure "${PKG_CONFIGURE_OPTS_NATIVE[@]}"
+else 
+    M4="${CLFS_ENV_PATH}/m4" CPPFLAGS=-fexceptions ./configure "${PKG_CONFIGURE_OPTS[@]}"
+fi
 
 make
 

@@ -22,6 +22,12 @@ PKG_URL="http://ftp.gnu.org/gnu/gmp/${PKG_NAME}-${PKG_VERSION}${PKG_SUB_VERSION}
 PKG_DEPENDS=""
 PKG_SECTION="devel"
 
-PKG_CONFIGURE_OPTS=(--prefix="${CLFS_TOOLS}"
+PKG_CONFIGURE_OPTS_NATIVE=(--prefix="${CLFS_TOOLS}"
                     --enable-cxx
                     --disable-static)
+
+PKG_CONFIGURE_OPTS=(--prefix="${CLFS_TOOLS}"
+                    --enable-cxx
+                    --disable-static
+                    --build="${CLFS_HOST}"
+                    --host="${CLFS_TARGET}")
