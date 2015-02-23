@@ -42,7 +42,7 @@ echo -en '\n#undef STANDARD_STARTFILE_PREFIX_2\n#define STANDARD_STARTFILE_PREFI
 mkdir -v "${CLFS_SOURCES}/${PKG_NAME}-build"
 cd "${CLFS_SOURCES}/${PKG_NAME}-build/"
 
-"${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/configure" "${PKG_CONFIGURE_OPTS[@]}"
+AR=ar LDFLAGS="-Wl,-rpath,${CLFS_TOOLS}/lib" "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/configure" "${PKG_CONFIGURE_OPTS[@]}"
 
 make
 
