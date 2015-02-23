@@ -1,4 +1,4 @@
-!/bin/bash
+!#/bin/bash
 
 # ISL
 
@@ -12,7 +12,7 @@ sub_pkg_dir="$(locate_package 'isl')"
 
 cd "${CLFS_SOURCES}/"
 
-if [ ! -e "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}${PKG_SUB_VERSION}.tar.bz2" ]; then
+if [ ! -e "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}.tar.bz2" ]; then
     wget --read-timeout=20 "${PKG_URL}"
 fi
 
@@ -25,7 +25,7 @@ fi
 
 cd "${CLFS_SOURCES}/"
 
-tar -xjvf "${PKG_NAME}-${PKG_VERSION}${PKG_SUB_VERSION}.tar.bz2"
+tar -xjvf "${PKG_NAME}-${PKG_VERSION}.tar.bz2"
 
 cd "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/"
 
