@@ -31,16 +31,22 @@ build_package() {
             declare -a scripts=(\
                  "file.sh" \
                  "linux_headers.sh" \
+                 "m4.sh" \
+                 "ncurses.sh" \
+                 "pkg-config-lite.sh" \
+                 "gmp.sh" \
+                 "mpfr.sh" \
+                 "mpc.sh" \
+                 "isl.sh" \
+                 "cloog.sh" \
                  "binutils.sh" \
                  "gcc-static.sh" \
                  "musl-libc.sh" \
                  "gcc.sh" \
                  "musl-libc.sh" \
                  "zlib.sh" \
-                 "m4.sh" \
                  "flex.sh" \
                  "bison.sh" \
-                 "gmp.sh" \
                  )
 
             for SCRIPT_NAME in "${scripts[@]}"; do
