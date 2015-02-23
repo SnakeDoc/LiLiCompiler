@@ -44,7 +44,7 @@ make
 
 make install
 
-cp -v ../"${PKG_NAME}-${PKG_VERSION}"/include/libiberty.h "${CLFS_TOOLS}/${CLFS_TARGET}/usr/include"
+cp -v ../"${PKG_NAME}-${PKG_VERSION}"/include/libiberty.h "${CLFS_TOOLS}"/usr/include
 
 # cleanup
 cd "${CLFS_SOURCES}/"
