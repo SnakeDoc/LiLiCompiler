@@ -29,6 +29,8 @@ tar -zxvf "${PKG_NAME}-${PKG_VERSION}.tar.gz"
 
 cd "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/"
 
+patch -Np1 -i "${SOURCES}/${PKG_NAME}-musl.patch"
+
 "${CLFS_SOURCES}/${PKG_NAME}-${PKG_VERSION}/configure" "${PKG_CONFIGURE_OPTS[@]}"
 
 make
