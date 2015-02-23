@@ -38,7 +38,7 @@ make mrproper
 make ARCH="${CLFS_ARCH}" headers_check
 
 # install the headers
-make ARCH="${CLFS_ARCH}" INSTALL_HDR_PATH="${CLFS_TOOLS}/${CLFS_TARGET}" headers_install
+make ARCH="${CLFS_ARCH}" INSTALL_HDR_PATH="${CLFS_TOOLS}" headers_install
 
 exit 0
 
