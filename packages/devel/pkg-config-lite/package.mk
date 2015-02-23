@@ -23,4 +23,4 @@ PKG_SECTION="devel"
 
 PKG_CONFIGURE_OPTS=(--prefix="${CLFS_TOOLS}"
                     --host="${CLFS_TARGET}"
-                    --with-pc-path="${CLFS_TOOLS}/lib/pkgconfig:${CLFS_TOOLS}/share/pkgconfig"
+                    --with-pc-path="${CLFS_TOOLS}/lib/pkgconfig:${CLFS_TOOLS}/share/pkgconfig")
