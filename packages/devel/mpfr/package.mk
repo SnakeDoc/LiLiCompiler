@@ -15,7 +15,7 @@
 ################################################################################
 
 PKG_NAME="mpfr"
-PKG_VERSION="3.1.4"
+PKG_VERSION="3.1.5"
 PKG_URL_TYPE="http"
 PKG_URL="http://www.mpfr.org/mpfr-current/${PKG_NAME}-${PKG_VERSION}.tar.bz2"
 PKG_DEPENDS=""
